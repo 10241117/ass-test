@@ -39,7 +39,7 @@
       <div id="main" class="container container-body">
         
         <div id="fullscreen-container">
-            <iframe id="test" class="video-js" controls preload="auto" width="840" height="460" data-setup="{}" src="https://www.youtube.com/embed/YAl2V98GmNU?rel=0&allowfullscreen=true" enablejsapi="1" frameborder="0" fs="1"></iframe>
+            <iframe class="video-js" controls preload="auto" width="840" height="460" data-setup="{}" src="https://www.youtube.com/embed/YAl2V98GmNU?rel=0&allowfullscreen=true" enablejsapi="1" frameborder="0" fs="1"></iframe>
         </div>
 
         <br>
@@ -58,7 +58,9 @@
         <script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
 
         <script>
-            var player = videojs('.video-stream .html5-main-video');
+            var video = document.querySelector('.video-stream .html5-main-video');
+            el2.setAttribute('id','test');
+            var player = videojs('test');
             player.ready(function () {
                 // This would look more nice as a plugin but is's just as showcase of using with custom players
                 var video = this.tech_.el_;
