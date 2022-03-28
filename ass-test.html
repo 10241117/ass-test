@@ -57,41 +57,42 @@
         <link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet" />
         <script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
 
-        <script>
-            var video_test = document.querySelector('.video-stream.html5-main-video');
-            video_test.setAttribute('id','test');
-            var player = videojs('test');
-            player.ready(function () {
-                // This would look more nice as a plugin but is's just as showcase of using with custom players
-                var video = this.tech_.el_;
-                window.SubtitlesOctopusOnLoad = function () {
-                    var options = {
-                        video: video,
-                        subUrl: '/JavascriptSubtitlesOctopus/subtitles/test.ass',
-                        fonts: ['/JavascriptSubtitlesOctopus/fonts/Arial.ttf', '/JavascriptSubtitlesOctopus/fonts/TimesNewRoman.ttf'],
-                        //onReady: onReadyFunction,
-                        debug: true,
-                        workerUrl: '/JavascriptSubtitlesOctopus/assets/js/subtitles-octopus-worker.js'
-                    };
-                    window.octopusInstance = new SubtitlesOctopus(options); // You can experiment in console
-                };
-                if (SubtitlesOctopus) {
-                    SubtitlesOctopusOnLoad();
-                }
-            });
-
-            var changeResolution = function (width, height) {
-                player.width(width / window.devicePixelRatio)
-                player.height(height / window.devicePixelRatio);
-                window.octopusInstance.resize();
-            };
-            var changeResolutionRO = function (width, height) {
-                player.width(width / window.devicePixelRatio)
-                player.height(height / window.devicePixelRatio);
-            };
-
-        </script>
+        
       </div>
     </div>
   </body>
+  <script>
+    var video_test = document.querySelector('.video-stream');
+    video_test.setAttribute('id','test');
+    var player = videojs('test');
+    player.ready(function () {
+        // This would look more nice as a plugin but is's just as showcase of using with custom players
+        var video = this.tech_.el_;
+        window.SubtitlesOctopusOnLoad = function () {
+            var options = {
+                video: video,
+                subUrl: '/JavascriptSubtitlesOctopus/subtitles/test.ass',
+                fonts: ['/JavascriptSubtitlesOctopus/fonts/Arial.ttf', '/JavascriptSubtitlesOctopus/fonts/TimesNewRoman.ttf'],
+                //onReady: onReadyFunction,
+                debug: true,
+                workerUrl: '/JavascriptSubtitlesOctopus/assets/js/subtitles-octopus-worker.js'
+            };
+            window.octopusInstance = new SubtitlesOctopus(options); // You can experiment in console
+        };
+        if (SubtitlesOctopus) {
+            SubtitlesOctopusOnLoad();
+        }
+    });
+
+    var changeResolution = function (width, height) {
+        player.width(width / window.devicePixelRatio)
+        player.height(height / window.devicePixelRatio);
+        window.octopusInstance.resize();
+    };
+    var changeResolutionRO = function (width, height) {
+        player.width(width / window.devicePixelRatio)
+        player.height(height / window.devicePixelRatio);
+    };
+
+    </script>
 </html>
