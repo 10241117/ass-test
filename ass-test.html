@@ -38,8 +38,8 @@
     <div id="content" style="padding-top: 25px;">
       <div id="main" class="container container-body">
         
-        <div id="fullscreen-container">
-            <iframe class="video-js" controls preload="auto" width="840" height="460" data-setup="{}" src="https://www.youtube.com/embed/YAl2V98GmNU?rel=0&allowfullscreen=true" enablejsapi="1" frameborder="0" fs="1"></iframe>
+        <div id="fullscreen-container" width="840" height="460">
+            <iframe id="iframe-video" class="video-js" controls preload="auto" width="840" height="460" data-setup="{}" src="https://www.youtube.com/embed/YAl2V98GmNU?rel=0&allowfullscreen=true" enablejsapi="1" frameborder="0" fs="1"></iframe>
         </div>
 
         <br>
@@ -62,7 +62,7 @@
     </div>
   </body>
   <script>
-    var video_test = document.querySelector('.video-stream');
+    var video_test = document.getElementById("iframe-video").contentDocument.getElementsByClassName("video-stream html5-main-video")[0];
     video_test.setAttribute('id','test');
     var player = videojs('test');
     player.ready(function () {
