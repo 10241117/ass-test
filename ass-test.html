@@ -62,8 +62,6 @@
     </div>
   </body>
   <script>
-    var video_test = document.getElementById("iframe-video").contentDocument.getElementsByClassName("video-stream html5-main-video")[0];
-    video_test.setAttribute('id','test');
     var player = videojs('test');
     player.ready(function () {
         // This would look more nice as a plugin but is's just as showcase of using with custom players
