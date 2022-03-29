@@ -83,10 +83,10 @@
     // This would look more nice as a plugin but is's just as showcase of using with custom players
         var options = {
             canvas: canva,
-            subUrl: '/JavascriptSubtitlesOctopus/subtitles/test.ass',
-            fonts: ['/JavascriptSubtitlesOctopus/fonts/Arial.ttf', '/JavascriptSubtitlesOctopus/fonts/TimesNewRoman.ttf'],
+            subUrl: '/JavascriptSubtitlesOctopus/subtitles/stationz.ass',
+            fonts: ['/JavascriptSubtitlesOctopus/fonts/圓體-繁.ttf', '/JavascriptSubtitlesOctopus/fonts/jf open 粉圓 1.1.ttf', '/JavascriptSubtitlesOctopus/fonts/Arial.ttf', '/JavascriptSubtitlesOctopus/fonts/TimesNewRoman.ttf'],
             //onReady: onReadyFunction,
-            debug: true,
+            debug: false,
             workerUrl: '/JavascriptSubtitlesOctopus/assets/js/subtitles-octopus-worker.js'
         };
         instance = new SubtitlesOctopus(options); // You can experiment in console
@@ -132,12 +132,11 @@
                 canva.style.height = '100%';
             }
         }, false);
-        console.log("here.");
     });
     var player;
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-            videoId: 'YAl2V98GmNU',
+            videoId: 'z3vHsToRf0c',
             rel: 0,
             enablejsapi: 1,
             frameborder: 0,
@@ -147,14 +146,10 @@
                 'onStateChange': onStateChange
             }
         });
-        console.log("done.");
-        console.log(player);
     }
 
     var timeID = 0;
-    console.log("done.");
     function onStateChange(e) {
-        console.log(e.data);
         if (e.data === 1) {
             window.clearInterval(timeID);
             timeID = return_time();
