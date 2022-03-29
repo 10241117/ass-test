@@ -139,7 +139,7 @@
     var player;
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-            videoId: 'z3vHsToRf0c',
+            videoId: 'm4sAzagx4zY',
             events: {
                 'onPlaybackRateChange': onPlaybackRateChange,
                 'onStateChange': onStateChange
@@ -150,6 +150,7 @@
                 frameborder: 0
             }
         });
+        document.getElementById('player').setAttribute('referrerpolicy', '_blank');
     }
 
     var timeID = 0;
