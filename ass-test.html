@@ -38,9 +38,14 @@
     <div id="content" style="padding-top: 25px;">
         <div id="main" class="container container-body">
             
-            <div id="fullscreen-container" width="840" height="640" style="position: relative">
-                <canvas id="canvas" width="840" height="640" style="position: absolute"></canvas>
-                <iframe id="iframe-video" class="video-js" controls preload="auto" width="840" height="460" data-setup="{}" src="https://www.youtube.com/embed/YAl2V98GmNU?rel=0&allowfullscreen=true" enablejsapi="1" frameborder="0" fs="1"></iframe>
+            <div id="fullscreen-container" style="position: relative; width:100%; height: 526px;">
+                <iframe id="iframe-video" class="video-js" controls preload="auto" style="position: absolute; width: 100%; height: 100%;" width="840" height="460" data-setup="{}" src="https://www.youtube.com/embed/YAl2V98GmNU?rel=0&allowfullscreen=true" enablejsapi="1" frameborder="0" fs="1"></iframe>
+                <canvas id="canvas" style="position: absolute; pointer-events: none; width: 100%; height: 100%;"></canvas>
+            </div>
+            <div class="btn-full">
+                <button class="button" id="fullscreen-btn">
+                全螢幕
+                </button>
             </div>
         </div>
     </div>
@@ -60,6 +65,23 @@
         var instance = new SubtitlesOctopus(options); // You can experiment in console
         instance.setCurrentTime(15);
         console.log("done.");
+        document.getElementById('fullscreen-btn').addEventListener('click', function(e) {
+        var elem = document.getElementById('fullscreen-container');
+
+        var openFullscreen = function() {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { /* Firefox */
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                elem.msRequestFullscreen();
+            }
+            };
+
+            openFullscreen();
+        });  
     });
     </script>
 </html>
