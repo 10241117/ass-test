@@ -78,6 +78,7 @@
 </style>
 <script>
     var canva = document.getElementById("canvas");
+    var instance;
     $(function () {
     // This would look more nice as a plugin but is's just as showcase of using with custom players
         var options = {
@@ -88,9 +89,9 @@
             debug: true,
             workerUrl: '/JavascriptSubtitlesOctopus/assets/js/subtitles-octopus-worker.js'
         };
-        var instance = new SubtitlesOctopus(options); // You can experiment in console
+        instance = new SubtitlesOctopus(options); // You can experiment in console
         instance.setCurrentTime(0);
-        
+
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
         var firstScriptTag = document.getElementsByTagName('script')[0];
