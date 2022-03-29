@@ -162,41 +162,33 @@
         }
     }
 
-    var interval = 50;
+    var interval = 25;
     var update = 0.05;
     function onPlaybackRateChange() {
         var rate = player.getPlaybackRate();
         switch(player.getPlaybackRate()) {
             case 1:
-                interval = 50;
                 update = 0.05;
                 break;
             case 2:
-                interval = 25;
                 update = 0.05;
                 break;
             case 1.5:
-                interval = 25;
                 update = 0.037;
                 break;
             case 0.5:
-                interval = 125;
                 update = 0.062;
                 break;
             case 0.25:
-                interval = 250;
                 update = 0.062;
                 break;
             case 1.25:
-                interval = 50;
                 update = 0.032;
                 break;
             case 0.75:
-                interval = 50;
                 update = 0.037;
                 break;
             case 1.75:
-                interval = 25;
                 update = 0.22;
                 break;
         }
@@ -216,6 +208,7 @@
             cur_time += update;
         }
         instance.setCurrentTime(cur_time);
+        console(old_time);
     }
     var return_time = function () {
         return window.setInterval(console_time, interval);
