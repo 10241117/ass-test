@@ -83,14 +83,14 @@
     // This would look more nice as a plugin but is's just as showcase of using with custom players
         var options = {
             canvas: canva,
-            subUrl: '/JavascriptSubtitlesOctopus/subtitles/test.ass',
+            subUrl: '/ass-test/subtitles/yo2.ass',
             fonts: [
-                '/JavascriptSubtitlesOctopus/fonts/NotoSansTC-Medium.otf',
-                '/JavascriptSubtitlesOctopus/fonts/Arial.ttf', 
-                '/JavascriptSubtitlesOctopus/fonts/TimesNewRoman.ttf'],
+                '/ass-test/fonts/NotoSansTC-Medium.otf',
+                '/ass-test/fonts/Arial.ttf', 
+                '/ass-test/fonts/TimesNewRoman.ttf'],
             //onReady: onReadyFunction,
             debug: true,
-            workerUrl: '/JavascriptSubtitlesOctopus/assets/js/subtitles-octopus-worker.js'
+            workerUrl: '/ass-test/assets/js/subtitles-octopus-worker.js'
         };
         instance = new SubtitlesOctopus(options); // You can experiment in console
         instance.setCurrentTime(0);
