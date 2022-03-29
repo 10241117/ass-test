@@ -39,7 +39,7 @@
         <div id="main" class="container container-body">
             
             <div id="fullscreen-container" style="position: relative;">
-                <iframe id="player" class="video-js" controls preload="auto" style="position: absolute; width: 100%; height: 100%;" data-setup="{}" src="https://www.youtube.com/embed/YAl2V98GmNU?rel=0&allowfullscreen=true" enablejsapi="1" frameborder="0" fs="1"></iframe>
+                <div id="player"></div>
                 <canvas id="canvas" width="1920" height="1080"></canvas>
             </div>
             <div class="btn-full">
@@ -51,6 +51,11 @@
     </div>
 </body>
 <style>
+    #player {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
     #fullscreen-container{  
         width:100%;
         background:red;  
@@ -71,7 +76,6 @@
         height: 100%;
     }
 </style>
-<script src="https://www.youtube.com/iframe_api"></script>
 <script>
     var canva = document.getElementById("canvas");
     $(function () {
@@ -86,7 +90,11 @@
         };
         var instance = new SubtitlesOctopus(options); // You can experiment in console
         instance.setCurrentTime(0);
-
+        
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         document.getElementById('fullscreen-btn').addEventListener('click', function(e) {
             var elem = document.getElementById('fullscreen-container');
             var screenWidth = screen.width*0.5625<screen.height ? screen.width : screen.height*1.7777;
@@ -123,86 +131,95 @@
                 canva.style.height = '100%';
             }
         }, false);
-
-        function onYouTubeIframeAPIReady() {
-            var player;
-            player = new YT.Player('player', {
-                events: {
-                    'onPlaybackRateChange': onPlaybackRateChange,
-                    'onStateChange': onStateChange
-                }
-            });
-        }
-
-        var timeID = 0;
-        function onStateChange(e) {
-            if (e.data === 1) {
-                window.clearInterval(timeID);
-                timeID = return_time();
-            }
-            else {
-                window.clearInterval(timeID);
-            }
-        }
-
-        var interval = 50;
-        var update = 0.05;
-        function onPlaybackRateChange() {
-            var rate = player.getPlaybackRate();
-            switch(player.getPlaybackRate()) {
-                case 1:
-                    interval = 50;
-                    update = 0.05;
-                    break;
-                case 2:
-                    interval = 25;
-                    update = 0.05;
-                    break;
-                case 1.5:
-                    interval = 25;
-                    update = 0.037;
-                    break;
-                case 0.5:
-                    interval = 125;
-                    update = 0.062;
-                    break;
-                case 0.25:
-                    interval = 250;
-                    update = 0.062;
-                    break;
-                case 1.25:
-                    interval = 50;
-                    update = 0.032;
-                    break;
-                case 0.75:
-                    interval = 50;
-                    update = 0.037;
-                    break;
-                case 1.75:
-                    interval = 25;
-                    update = 0.22;
-                    break;
-            }
-            if (player.getPlayerState() === 1) {
-                window.clearInterval(timeID);
-                timeID = return_time();
-            }
-        }
-        var old_time = -1;
-        var cur_time = -1;
-        var console_time = function() {
-            if (player.playerInfo.currentTime != old_time) {
-                old_time = player.playerInfo.currentTime;
-                cur_time = old_time;
-            }
-            else {
-                cur_time += update;
-            }
-            instance.setCurrentTime(cur_time);
-        }
-        var return_time = function () {
-            return window.setInterval(console_time, interval);
-        }
+        console.log("here.");
     });
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            videoId: 'YAl2V98GmNU',
+            rel: 0,
+            enablejsapi: 1,
+            frameborder: 0,
+            fs: 1,
+            events: {
+                'onPlaybackRateChange': onPlaybackRateChange,
+                'onStateChange': onStateChange
+            }
+        });
+        console.log("done.");
+        console.log(player);
+    }
+
+    var timeID = 0;
+    console.log("done.");
+    function onStateChange(e) {
+        console.log(e.data);
+        if (e.data === 1) {
+            window.clearInterval(timeID);
+            timeID = return_time();
+        }
+        else {
+            window.clearInterval(timeID);
+        }
+    }
+
+    var interval = 50;
+    var update = 0.05;
+    function onPlaybackRateChange() {
+        var rate = player.getPlaybackRate();
+        switch(player.getPlaybackRate()) {
+            case 1:
+                interval = 50;
+                update = 0.05;
+                break;
+            case 2:
+                interval = 25;
+                update = 0.05;
+                break;
+            case 1.5:
+                interval = 25;
+                update = 0.037;
+                break;
+            case 0.5:
+                interval = 125;
+                update = 0.062;
+                break;
+            case 0.25:
+                interval = 250;
+                update = 0.062;
+                break;
+            case 1.25:
+                interval = 50;
+                update = 0.032;
+                break;
+            case 0.75:
+                interval = 50;
+                update = 0.037;
+                break;
+            case 1.75:
+                interval = 25;
+                update = 0.22;
+                break;
+        }
+        if (player.getPlayerState() === 1) {
+            window.clearInterval(timeID);
+            timeID = return_time();
+        }
+    }
+    var old_time = -1;
+    var cur_time = -1;
+    var console_time = function() {
+        if (player.playerInfo.currentTime != old_time) {
+            old_time = player.playerInfo.currentTime;
+            cur_time = old_time;
+        }
+        else {
+            cur_time += update;
+        }
+        instance.setCurrentTime(cur_time);
+    }
+    var return_time = function () {
+        return window.setInterval(console_time, interval);
+    }
 </script>
 </html>
