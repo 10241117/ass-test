@@ -36,50 +36,48 @@
     </nav>
 
     <div id="content" style="padding-top: 25px;">
-      <div id="main" class="container container-body">
+        <div id="main" class="container container-body">
+            
+            <div id="fullscreen-container" width="840" height="460" style="position: relative">
+                <canvas id="canvas" width="840" height="640" style="position: absolute"></canvas>
+                <iframe id="iframe-video" class="video-js" controls preload="auto" width="840" height="460" data-setup="{}" src="https://www.youtube.com/embed/YAl2V98GmNU?rel=0&allowfullscreen=true" enablejsapi="1" frameborder="0" fs="1"></iframe>
+            </div>
+
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary" onclick="changeResolution(1280, 720);">Change resolution to 1280x720</button>
+            <button type="button" class="btn btn-primary" onclick="changeResolution(1920, 1080);">Change resolution to 1920x1080</button>
+            <button type="button" class="btn btn-primary" onclick="changeResolution(3840, 2160);">Change resolution to 3840x2160</button>
+            <br><br><br>
+            <button type="button" class="btn btn-warning" onclick="changeResolutionRO(1280, 720);">Set Size to 1280x720 with ResizeObserver</button>
+            <button type="button" class="btn btn-warning" onclick="changeResolutionRO(1920, 1080);">Set Size to 1920x1080 with ResizeObserver</button>
+            <button type="button" class="btn btn-warning" onclick="changeResolutionRO(3840, 2160);">Set Size to 3840x2160 with ResizeObserver</button>
+            <br>
+            <br>
+
+            <link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet" />
+            <script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
+
         
-        <div id="fullscreen-container" width="840" height="460">
-            <iframe id="iframe-video" class="video-js" controls preload="auto" width="840" height="460" data-setup="{}" src="https://www.youtube.com/embed/YAl2V98GmNU?rel=0&allowfullscreen=true" enablejsapi="1" frameborder="0" fs="1"></iframe>
         </div>
-
-        <br>
-        <br>
-        <button type="button" class="btn btn-primary" onclick="changeResolution(1280, 720);">Change resolution to 1280x720</button>
-        <button type="button" class="btn btn-primary" onclick="changeResolution(1920, 1080);">Change resolution to 1920x1080</button>
-        <button type="button" class="btn btn-primary" onclick="changeResolution(3840, 2160);">Change resolution to 3840x2160</button>
-        <br><br><br>
-        <button type="button" class="btn btn-warning" onclick="changeResolutionRO(1280, 720);">Set Size to 1280x720 with ResizeObserver</button>
-        <button type="button" class="btn btn-warning" onclick="changeResolutionRO(1920, 1080);">Set Size to 1920x1080 with ResizeObserver</button>
-        <button type="button" class="btn btn-warning" onclick="changeResolutionRO(3840, 2160);">Set Size to 3840x2160 with ResizeObserver</button>
-        <br>
-        <br>
-
-        <link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet" />
-        <script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
-
-        
-      </div>
     </div>
   </body>
   <script>
-    var player = videojs('test');
+    var player = document.getElementById("canvas");
     player.ready(function () {
         // This would look more nice as a plugin but is's just as showcase of using with custom players
-        var video = this.tech_.el_;
         window.SubtitlesOctopusOnLoad = function () {
             var options = {
-                video: video,
+                canvas: player,
                 subUrl: '/JavascriptSubtitlesOctopus/subtitles/test.ass',
                 fonts: ['/JavascriptSubtitlesOctopus/fonts/Arial.ttf', '/JavascriptSubtitlesOctopus/fonts/TimesNewRoman.ttf'],
                 //onReady: onReadyFunction,
                 debug: true,
                 workerUrl: '/JavascriptSubtitlesOctopus/assets/js/subtitles-octopus-worker.js'
             };
-            window.octopusInstance = new SubtitlesOctopus(options); // You can experiment in console
+            var instance = new SubtitlesOctopus(options); // You can experiment in console
         };
-        if (SubtitlesOctopus) {
-            SubtitlesOctopusOnLoad();
-        }
+        instance.setCurrentTime(15);
     });
 
     var changeResolution = function (width, height) {
