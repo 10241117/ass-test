@@ -40,7 +40,7 @@
             
             <div id="fullscreen-container" style="position: relative;">
                 <iframe id="iframe-video" class="video-js" controls preload="auto" style="position: absolute; width: 100%; height: 100%;" data-setup="{}" src="https://www.youtube.com/embed/YAl2V98GmNU?rel=0&allowfullscreen=true" enablejsapi="1" frameborder="0" fs="1"></iframe>
-                <canvas id="canvas" width="1920" height="1080" style="position: absolute; pointer-events: none; width: 100%; height: 100%;"></canvas>
+                <canvas id="canvas" width="1920" height="1080"></canvas>
             </div>
             <div class="btn-full">
                 <button class="button" id="fullscreen-btn">
@@ -49,8 +49,8 @@
             </div>
         </div>
     </div>
-  </body>
-  <style>
+</body>
+<style>
     #fullscreen-container{  
         width:100%;
         background:red;  
@@ -61,8 +61,17 @@
         display: block;  
         padding-top:56.25%;  
     }
-  </style>
-  <script>
+    #canvas{
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<script>
     var player = document.getElementById("canvas");
     $(function () {
     // This would look more nice as a plugin but is's just as showcase of using with custom players
@@ -78,22 +87,45 @@
         instance.setCurrentTime(15);
         console.log("done.");
         document.getElementById('fullscreen-btn').addEventListener('click', function(e) {
-        var elem = document.getElementById('fullscreen-container');
+            var elem = document.getElementById('fullscreen-container');
+            var screenWidth = screen.width*0.5625<screen.height ? screen.width : screen.height*1.7777;
+            var screenHeight = screen.width*0.5625<screen.height ? screen.width*0.5625 : screen.height;
 
-        var openFullscreen = function() {
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.mozRequestFullScreen) { /* Firefox */
-                elem.mozRequestFullScreen();
-            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { /* IE/Edge */
-                elem.msRequestFullscreen();
-            }
+            var openFullscreen = function() {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.mozRequestFullScreen) { /* Firefox */
+                    elem.mozRequestFullScreen();
+                } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                    elem.msRequestFullscreen();
+                }
             };
 
             openFullscreen();
-        });  
+            console.log(screenWidth, screenHeight);
+            var screenWidth = screen.width*0.5625<screen.height ? screen.width : screen.height*1.7777;
+            var screenHeight = screen.width*0.5625<screen.height ? screen.width*0.5625 : screen.height;
+            player.style.width = screenWidth + 'px';
+            player.style.height = screenHeight + 'px';
+            console.log("reset size.", screenWidth, screenHeight);
+        });
+
+        window.addEventListener("resize", function(){
+            var screenWidth = screen.width*0.5625<screen.height ? screen.width : screen.height*1.7777;
+            var screenHeight = screen.width*0.5625<screen.height ? screen.width*0.5625 : screen.height;
+            if(document.fullscreenElement) {
+                player.style.width = screenWidth + 'px';
+                player.style.height = screenHeight + 'px';
+                console.log("reset size.", screenWidth, screenHeight);
+            }
+            else {
+                console.log(document.fullscreenElement);
+                player.style.width = '100%';
+                player.style.height = '100%';
+            }
+        }, false);
     });
-    </script>
+</script>
 </html>
