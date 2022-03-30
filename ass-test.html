@@ -83,9 +83,10 @@
     // This would look more nice as a plugin but is's just as showcase of using with custom players
         var options = {
             canvas: canva,
-            subUrl: '/ass-test/subtitles/yo2.ass',
+            subUrl: '/ass-test/subtitles/fr04.ass',
             fonts: [
-                '/ass-test/fonts/NotoSansTC-Medium.otf',
+                '/ass-test/fonts/STYuanti-TC-Regular.ttf',
+                '/ass-test/fonts/huninn.ttf',
                 '/ass-test/fonts/Arial.ttf', 
                 '/ass-test/fonts/TimesNewRoman.ttf'],
             //onReady: onReadyFunction,
@@ -93,7 +94,6 @@
             workerUrl: '/ass-test/assets/js/subtitles-octopus-worker.js'
         };
         instance = new SubtitlesOctopus(options); // You can experiment in console
-        instance.setCurrentTime(0);
 
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
@@ -139,7 +139,7 @@
     var player;
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-            videoId: 'm4sAzagx4zY',
+            videoId: 'X2J1YpghC3o',
             events: {
                 'onPlaybackRateChange': onPlaybackRateChange,
                 'onStateChange': onStateChange
@@ -150,7 +150,6 @@
                 frameborder: 0
             }
         });
-        document.getElementById('player').setAttribute('referrerpolicy', '_blank');
     }
 
     var timeID = 0;
