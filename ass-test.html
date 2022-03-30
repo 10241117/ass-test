@@ -135,6 +135,10 @@
                 canva.style.height = '100%';
             }
         }, false);
+
+        canva.addEventListener('mousemove', function(){
+            player.dispatchEvent(new Event('mousemove'));
+        });
     });
     var player;
     function onYouTubeIframeAPIReady() {
@@ -151,9 +155,7 @@
             }
         });
     }
-    canva.addEventListener('mousemove', e => {
-        player.dispatchEvent(new Event('mousemove'));
-    });
+    
     var timeID = 0;
     function onStateChange(e) {
         if (e.data === 1) {
