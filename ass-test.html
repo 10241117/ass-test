@@ -47,7 +47,7 @@
                 全螢幕
                 </button>
             </div>
-            <div>字幕更新了<span id="update">0</span>次</div>
+            <div>字幕更新了<span id="update">0</span>次，兩次getCurrentTime()差了<span id="dis">0</span>秒，期間字幕更新了<span id="per_update">0</span>次。</span></div>
         </div>
     </div>
 </body>
@@ -81,9 +81,13 @@
     var canva;
     var instance;
     var num;
+    var dis;
+    var per;
     $(function () {
         canva = document.getElementById("canvas");
         num = document.getElementById("update");
+        dis = document.getElementById("dis");
+        per = document.getElementById("per_update");
     // This would look more nice as a plugin but is's just as showcase of using with custom players
         var options = {
             canvas: canva,
@@ -208,9 +212,13 @@
     var update_num = 0;
     var old_time = -1;
     var cur_time = -1;
+    var per_time = 0;
     var console_time = function() {
         if (player.playerInfo.currentTime != old_time) {
+            dis.innerHTML = player.playerInfo.currentTime - old_time;
             old_time = player.playerInfo.currentTime;
+            per.innerHTML = per_time;
+            per_time = 0;
             cur_time = old_time;
         }
         else {
@@ -218,6 +226,7 @@
         }
         instance.setCurrentTime(cur_time);
         update_num++;
+        per_time++;
         num.innerHTML = update_num;
     }
     var return_time = function () {
