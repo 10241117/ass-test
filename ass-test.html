@@ -47,6 +47,7 @@
                 全螢幕
                 </button>
             </div>
+            <div>字幕更新了<span id="update">0</span>次</div>
         </div>
     </div>
 </body>
@@ -79,8 +80,10 @@
 <script>
     var canva;
     var instance;
+    var num;
     $(function () {
         canva = document.getElementById("canvas");
+        num = document.getElementById("update");
     // This would look more nice as a plugin but is's just as showcase of using with custom players
         var options = {
             canvas: canva,
@@ -202,6 +205,7 @@
             timeID = return_time();
         }
     }
+    var update = 0;
     var old_time = -1;
     var cur_time = -1;
     var console_time = function() {
@@ -213,6 +217,8 @@
             cur_time += update;
         }
         instance.setCurrentTime(cur_time);
+        update++;
+        num.innerHTML = update;
     }
     var return_time = function () {
         return window.setInterval(console_time, interval);
