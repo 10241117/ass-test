@@ -205,7 +205,7 @@
             timeID = return_time();
         }
     }
-    var update = 0;
+    var update_num = 0;
     var old_time = -1;
     var cur_time = -1;
     var console_time = function() {
@@ -217,8 +217,8 @@
             cur_time += update;
         }
         instance.setCurrentTime(cur_time);
-        update++;
-        num.innerHTML = update;
+        update_num++;
+        num.innerHTML = update_num;
     }
     var return_time = function () {
         return window.setInterval(console_time, interval);
