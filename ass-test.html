@@ -77,9 +77,10 @@
     }
 </style>
 <script>
-    var canva = document.getElementById("canvas");
+    var canva;
     var instance;
     $(function () {
+        canva = document.getElementById("canvas");
     // This would look more nice as a plugin but is's just as showcase of using with custom players
         var options = {
             canvas: canva,
@@ -150,7 +151,9 @@
             }
         });
     }
-
+    canva.addEventListener('mousemove', e => {
+        player.dispatchEvent(new Event('mousemove'));
+    });
     var timeID = 0;
     function onStateChange(e) {
         if (e.data === 1) {
