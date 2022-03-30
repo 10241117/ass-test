@@ -47,7 +47,7 @@
                 全螢幕
                 </button>
             </div>
-            <div>字幕更新了<span id="update">0</span>次，兩次getCurrentTime()差了<span id="dis">0</span>秒，期間字幕更新了<span id="per_update">0</span>次。</span></div>
+            <div id="debuggg">字幕更新了<span id="update">0</span>次，兩次getCurrentTime()差了<span id="dis">0</span>秒，期間字幕更新了<span id="per_update">0</span>次，平均每次更新時間為<span id="per_time">0</span>秒。</div>
         </div>
     </div>
 </body>
@@ -83,11 +83,15 @@
     var num;
     var dis;
     var per;
+    var per_time;
+    var ddd;
     $(function () {
         canva = document.getElementById("canvas");
         num = document.getElementById("update");
         dis = document.getElementById("dis");
         per = document.getElementById("per_update");
+        per_time = document.getElementById("per_time");
+        ddd = document.getElementById("debuggg");
     // This would look more nice as a plugin but is's just as showcase of using with custom players
         var options = {
             canvas: canva,
@@ -212,21 +216,23 @@
     var update_num = 0;
     var old_time = -1;
     var cur_time = -1;
-    var per_time = 0;
+    var per_update = 0;
     var console_time = function() {
         if (player.playerInfo.currentTime != old_time) {
             dis.innerHTML = player.playerInfo.currentTime - old_time;
+            per.innerHTML = per_update;
+            per_time.innerHTML = (player.playerInfo.currentTime - old_time)/per_update;
             old_time = player.playerInfo.currentTime;
-            per.innerHTML = per_time;
-            per_time = 0;
+            per_update = 0;
             cur_time = old_time;
+            console.log(ddd.innerHTML);
         }
         else {
             cur_time += update;
         }
         instance.setCurrentTime(cur_time);
         update_num++;
-        per_time++;
+        per_update++;
         num.innerHTML = update_num;
     }
     var return_time = function () {
