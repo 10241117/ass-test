@@ -179,12 +179,12 @@
     }
 
     var interval = 10;
-    var update = 0.01;
+    var update = 0.011;
     function onPlaybackRateChange() {
         var rate = player.getPlaybackRate();
         switch(player.getPlaybackRate()) {
             case 1:
-                update = 0.012;
+                update = 0.011;
                 break;
             case 2:
                 update = 0.02;
