@@ -178,34 +178,34 @@
         }
     }
 
-    var interval = 25;
-    var update = 0.0251;
+    var interval = 10;
+    var update = 0.01;
     function onPlaybackRateChange() {
         var rate = player.getPlaybackRate();
         switch(player.getPlaybackRate()) {
             case 1:
-                update = 0.0251;
+                update = 0.01;
                 break;
             case 2:
-                update = 0.0501;
+                update = 0.02;
                 break;
             case 1.5:
-                update = 0.0376;
+                update = 0.015;
                 break;
             case 0.5:
-                update = 0.0125;
+                update = 0.005;
                 break;
             case 0.25:
-                update = 0.0062;
+                update = 0.0025;
                 break;
             case 1.25:
-                update = 0.0307;
+                update = 0.0125;
                 break;
             case 0.75:
-                update = 0.0187;
+                update = 0.075;
                 break;
             case 1.75:
-                update = 0.439;
+                update = 0.0175;
                 break;
         }
         if (player.getPlayerState() === 1) {
@@ -225,7 +225,6 @@
             old_time = player.playerInfo.currentTime;
             per_update = 0;
             cur_time = old_time;
-            console.log(ddd.innerText);
         }
         else {
             cur_time += update;
