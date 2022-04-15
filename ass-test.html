@@ -95,11 +95,12 @@
     // This would look more nice as a plugin but is's just as showcase of using with custom players
         var options = {
             canvas: canva,
-            subUrl: '/ass-test/subtitles/mama.ass',
+            subUrl: '/ass-test/subtitles/minkyWay01.ass',
             fonts: [
                 '/ass-test/fonts/NotoSansTC-Medium.otf',
-                '/ass-test/fonts/Arial.ttf', 
-                '/ass-test/fonts/TimesNewRoman.ttf'],
+                '/ass-test/fonts/huninn.ttf', 
+                '/ass-test/fonts/LiJinHei.TTC',
+                '/ass-test/fonts/STYuanti-TC-Regular.ttf'],
             //onReady: onReadyFunction,
             debug: true,
             workerUrl: '/ass-test/assets/js/subtitles-octopus-worker.js'
@@ -154,7 +155,7 @@
     var player;
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-            videoId: 'mabphOwb91U',
+            videoId: 'mV2oSrrpqc',
             events: {
                 'onPlaybackRateChange': onPlaybackRateChange,
                 'onStateChange': onStateChange
