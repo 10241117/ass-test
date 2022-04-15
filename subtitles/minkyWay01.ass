@@ -16,7 +16,9 @@ Video File: ../Downloads/ATEEZ(에이티즈) 밍키웨이 #1 – 상황 별 꾸�
 Video AR Mode: 4
 Video AR Value: 1.777778
 Video Zoom Percent: 0.875000
-Video Position: 180
+Scroll Position: 378
+Active Line: 379
+Video Position: 7208
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
@@ -26,10 +28,10 @@ Style: 字幕 - y1000,jf open 粉圓 1.1,45,&H00000000,&H000000FF,&H00FFFFFF,&H0
 Style: 黑框白字,華康儷金黑,50,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2.5,0,2,10,10,10,1
 Style: 清單小字 - 四排,jf open 粉圓 1.1,37,&H00000000,&H000000FF,&H00FFFFFF,&H00000000,0,0,0,0,100,100,0,0,3,3,0,7,150,10,397,1
 Style: 清單小字 - 三排,jf open 粉圓 1.1,37,&H00000000,&H000000FF,&H00FFFFFF,&H00000000,0,0,0,0,100,100,0,0,3,3,0,7,150,10,424,1
-Style: 藍框白字,Noto Sans CJK TC Medium,60,&H00FCF7F1,&H000000FF,&H00B45D43,&H00B2594E,0,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1
-Style: 淺藍框白字,Noto Sans CJK TC Medium,75,&H00FFFFFB,&H000000FF,&H00DF9C87,&H00ECCDC9,0,-1,0,0,100,100,0,0,1,2,2,9,10,10,10,1
+Style: 藍框白字,Noto Sans TC Medium,60,&H00FCF7F1,&H000000FF,&H00B45D43,&H00B2594E,0,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1
+Style: 淺藍框白字,Noto Sans TC Medium,75,&H00FFFFFB,&H000000FF,&H00DF9C87,&H00ECCDC9,0,-1,0,0,100,100,0,0,1,2,2,9,10,10,10,1
 Style: 名字 - y993,圓體-繁,35,&H00FFFFFF,&H000000FF,&H00979159,&H00000000,0,0,0,0,100,100,0,0,3,5,0,1,10,10,10,1
-Style: 中央標題,Noto Sans CJK TC Medium,100,&H00FFFFFF,&H000000FF,&H00FFFFFF,&H00C74C65,0,0,0,0,100,100,0,0,1,0,5.5,2,10,10,270,1
+Style: 中央標題,Noto Sans TC Medium,100,&H00FFFFFF,&H000000FF,&H00FFFFFF,&H00C74C65,0,0,0,0,100,100,0,0,1,0,5.5,2,10,10,270,1
 Style: 字幕替代字體 - y993,圓體-繁,34,&H00000000,&H000000FF,&H00FFFFFF,&H00000000,0,0,0,0,100,100,1.4,0,3,2,0,2,10,10,10,1
 Style: 黑字,jf open 粉圓 1.1,35,&H00000000,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,2,10,10,20,1
 
