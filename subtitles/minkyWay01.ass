@@ -11,14 +11,14 @@ PlayResY: 1080
 
 [Aegisub Project Garbage]
 Last Style Storage: main
-Audio File: ../Downloads/ATEEZ(에이티즈) 밍키웨이 #1 – 상황 별 꾸안꾸 스타일링 팁.mp4
-Video File: ../Downloads/ATEEZ(에이티즈) 밍키웨이 #1 – 상황 별 꾸안꾸 스타일링 팁.mp4
+Audio File: ../../../Downloads/ATEEZ(에이티즈) 밍키웨이 #1 – 상황 별 꾸안꾸 스타일링 팁.mp4
+Video File: ../../../Downloads/ATEEZ(에이티즈) 밍키웨이 #1 – 상황 별 꾸안꾸 스타일링 팁.mp4
 Video AR Mode: 4
 Video AR Value: 1.777778
-Video Zoom Percent: 0.875000
-Scroll Position: 378
-Active Line: 379
-Video Position: 7208
+Video Zoom Percent: 0.750000
+Scroll Position: 405
+Active Line: 418
+Video Position: 11504
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
@@ -40,7 +40,7 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 Dialogue: 0,0:00:00.00,0:00:02.93,notosans,人聲,0,0,0,,無論什麼路都一起 Yeah♪
 Dialogue: 0,0:00:02.93,0:00:05.56,notosans,人聲,0,0,0,,會成為照亮你前方的光♪
 Dialogue: 0,0:00:05.56,0:00:07.84,notosans,人聲,0,0,0,,就算跌倒也會握緊你的手♪
-Dialogue: 0,0:00:07.84,0:00:10.78,notosans,人聲,0,0,0,,一起向前奔去♪ 
+Dialogue: 0,0:00:07.84,0:00:10.78,notosans,人聲,0,0,0,,一起向前奔去♪
 Dialogue: 0,0:00:10.78,0:00:13.38,notosans,人聲,0,0,0,,我們所有人都一起 Yeah♪
 Dialogue: 0,0:00:13.38,0:00:16.00,notosans,人聲,0,0,0,,無論在哪都昂首邁進吧♪
 Dialogue: 0,0:00:16.00,0:00:19.88,notosans,人聲,0,0,0,,全都牽起手往舞台跑去吧♪
@@ -265,7 +265,7 @@ Dialogue: 0,0:01:31.57,0:01:33.19,字幕 - y1000,字幕,0,0,0,,{\pos(1016,1000)}
 Dialogue: 0,0:01:33.19,0:01:34.44,字幕 - y1000,字幕,0,0,0,,{\pos(1016,1000)}Let's go！
 Dialogue: 0,0:01:39.20,0:01:42.74,字幕 - y1000,字幕,0,0,0,,{\pos(1016,1000)}\h     試著穿搭了平常去練習室的Look     \h
 Dialogue: 0,0:01:43.16,0:01:44.83,字幕 - y1000,字幕,0,0,0,,{\pos(1016,1000)}\h     如何？不錯嗎？     \h
-Dialogue: 0,0:01:45.04,0:01:46.25,字幕 - y1000,字幕,0,0,0,,{\pos(1030,1000)}好看吧？ 
+Dialogue: 0,0:01:45.04,0:01:46.25,字幕 - y1000,字幕,0,0,0,,{\pos(1030,1000)}好看吧？
 Dialogue: 0,0:01:46.25,0:01:48.83,字幕 - y1000,字幕,0,0,0,,{\pos(1016,1000)}\h   還有也許整體看起來會有點無聊   \h
 Dialogue: 0,0:01:48.83,0:01:51.42,字幕 - y1000,字幕,0,0,0,,{\pos(1030,1000)}雖然這樣的印花也很好
 Dialogue: 0,0:01:51.42,0:01:52.96,字幕 - y1000,字幕,0,0,0,,{\pos(1016,1000)}如果有點無聊的話，像這樣
@@ -448,6 +448,22 @@ Dialogue: 0,0:03:30.60,0:03:33.31,藍框白字,藍框白字,0,0,0,,{\pos(1057,70
 Dialogue: 0,0:04:09.35,0:04:12.27,藍框白字,藍框白字,0,0,0,,（可可）（愛愛）
 Dialogue: 0,0:08:06.75,0:08:09.46,藍框白字,藍框白字,0,0,0,,{\pos(1240.571,563.429)}※劇透注意！
 Dialogue: 0,0:08:17.14,0:08:20.64,藍框白字,藍框白字,0,0,0,,{\pos(997,241.571)}（為了弘中哥再次reaction）
-Dialogue: 0,0:07:56.62,0:07:58.70,黑字,BY.HOONGJOONG,0,0,0,,{\pos(1231.714,523.714)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:56.62,0:07:56.74,黑字,BY.HOONGJOONG,0,0,0,,{\move(1231.429,527.714,1224.858,527.428,22,106)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:56.74,0:07:56.87,黑字,BY.HOONGJOONG,0,0,0,,{\move(1227.428,529.143,1229.143,531.714,27,111)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:56.87,0:07:56.99,黑字,BY.HOONGJOONG,0,0,0,,{\move(1230,532.857,1229.143,536.857,23,106)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:56.99,0:07:57.12,黑字,BY.HOONGJOONG,0,0,0,,{\move(1228.286,538,1225.714,531.714,28,111)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:57.12,0:07:57.24,黑字,BY.HOONGJOONG,0,0,0,,{\move(1224.286,530,1227.714,519.714,23,106)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:57.24,0:07:57.33,黑字,BY.HOONGJOONG,0,0,0,,{\move(1226.286,512,1219.714,507.714,28,70)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:57.33,0:07:57.45,黑字,BY.HOONGJOONG,0,0,0,,{\move(1214.286,490,1209.714,457.714,21,105)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:57.45,0:07:57.58,黑字,BY.HOONGJOONG,0,0,0,,{\move(1210.286,456,1217.714,483.714,27,110)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:57.58,0:07:57.70,黑字,BY.HOONGJOONG,0,0,0,,{\move(1214.286,498,1201.714,509.714,22,105)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:57.70,0:07:57.83,黑字,BY.HOONGJOONG,0,0,0,,{\move(1196.286,506,1185.714,501.714,27,110)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:57.83,0:07:57.95,黑字,BY.HOONGJOONG,0,0,0,,{\move(1178.286,500,1163.714,505.714,22,105)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:57.95,0:07:58.08,黑字,BY.HOONGJOONG,0,0,0,,{\move(1164.286,520,1157.714,521.714,27,110)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:58.08,0:07:58.20,黑字,BY.HOONGJOONG,0,0,0,,{\move(1154.286,512,1157.714,525.714,22,106)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:58.20,0:07:58.33,黑字,BY.HOONGJOONG,0,0,0,,{\move(1160.286,532,1161.714,519.714,27,111)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:58.33,0:07:58.45,黑字,BY.HOONGJOONG,0,0,0,,{\move(1164.286,522,1169.714,533.714,22,106)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:58.45,0:07:58.58,黑字,BY.HOONGJOONG,0,0,0,,{\move(1174.286,532,1179.714,537.714,28,111)}包裝：BY.HONGJOONG
+Dialogue: 0,0:07:58.58,0:07:58.70,黑字,BY.HOONGJOONG,0,0,0,,{\move(1182.286,544,1179.714,555.714,23,106)}包裝：BY.HONGJOONG
 Dialogue: 0,0:02:45.26,0:02:47.93,黑框白字,黑框白字,0,0,0,,{\org(-2000024,-196.8)\pos(1500,976.8)}{\org(-2000000,0)\fr0.0005}宋旼琦 (ATEEZ/Rapper)\N{\org(-2000000,0)\fr-0.0005}這世上的帥氣都是我的
 Dialogue: 0,0:05:27.18,0:05:28.39,黑框白字,黑框白字,0,0,0,,{\pos(1093.029,908.4)}機場穿搭，必須拎包。 {\fs35} by.宋旼琦（ATEEZ）
